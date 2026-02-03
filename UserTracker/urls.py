@@ -22,3 +22,11 @@ urlpatterns = [
     path('', views.Member),
     path('<int:pk>/', views.TrackerPlanViewSet),
 ]
+
+from rest_framework.routers import DefaultRouter
+from .views import  TrackerPlanViewSet
+
+router = DefaultRouter()
+router.register(r'trackers', TrackerPlanViewSet)
+
+urlpatterns = router.urls
