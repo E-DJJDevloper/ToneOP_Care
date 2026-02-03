@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Diet Plans List</title>
+</head>
+<body>
+    <h1>All Diet Plans</h1>
+    <a href="{% url 'int:pk>/' %}">Create New Plan</a>
+    <ul>
+        {% for tweet in tweets %}
+            <li>
+                <strong>{{ tweet.name }}</strong> - {{ tweet.description }} 
+                <br>
+                Calories: {{ tweet.calories_per_day }}
+                <br>
+                <a href="{% url 'tweet_edit' tweet.id %}">Edit</a> |
+                <a href="{% url 'tweet_delete' tweet.id %}">Delete</a>
+            </li>
+        {% empty %}
+            <li>No diet plans yet.</li>
+        {% endfor %}
+    </ul>
+</body>
+</html>

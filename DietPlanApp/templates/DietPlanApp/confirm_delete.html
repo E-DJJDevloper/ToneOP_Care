@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Delete Diet Plan</title>
+</head>
+<body>
+    <h1>Delete Diet Plan</h1>
+    <p>Are you sure you want to delete <strong>{{ tweet.name }}</strong>?</p>
+    <form method="post">
+        {% csrf_token %}
+        <button type="submit">Yes, Delete</button>
+    </form>
+    <a href="{% url 'Tweet_list' %}">Cancel</a>
+</body>
+</html>

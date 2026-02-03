@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Create/Edit Diet Plan</title>
+</head>
+<body>
+    <h1>{% if form.instance.pk %}Edit Diet Plan{% else %}Create Diet Plan{% endif %}</h1>
+    <form method="post" enctype="multipart/form-data">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit">Save</button>
+    </form>
+    <a href="{% url 'Tweet_list' %}">Back to List</a>
+</body>
+</html>
