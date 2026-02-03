@@ -10,6 +10,6 @@ from django.urls import path
 from . import views
 
 urlpatterns = [
-    path('', views.SignUpView, name='user_list'),
-    path('<int:pk>/', views.SignInView, name='user_detail'),
+    path('', views.SignUpView),
+    path('/', views.SignInView),
 ]

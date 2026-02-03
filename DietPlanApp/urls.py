@@ -16,7 +16,7 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
-from .views import DietPlanViewSet, IsMember
+from .views import DietPlanViewSet
 
 
 # from django.urls import path, include
@@ -34,6 +34,6 @@ from django.urls import path
 from . import views
 
 urlpatterns = [
-    path('', views.IsMember, name='dietplan_list'),
-    path('<int:pk>/', views.DietPlanViewSet, name='dietplan_detail'),
+    path('', views.SSMember),
+    path('<int:pk>/', views.DietPlanViewSet),
 ]

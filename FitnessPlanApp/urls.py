@@ -17,6 +17,21 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path
 
+from django.urls import path, include
+from rest_framework.routers import DefaultRouter
+from .views import FitnessPlanViewSet
+
+router = DefaultRouter()
+router.register(r'fitnessplans', FitnessPlanViewSet, basename='fitnessplan')
+
 urlpatterns = [
-    path('admin/', admin.site.urls),
+    path('', include(router.urls)),
+]
+
+from django.urls import path
+from . import views
+
+urlpatterns = [
+    path('', views.IMember),
+    path('<int:pk>/', views.FitnessPlanViewSet),
 ]
