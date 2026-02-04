@@ -32,8 +32,24 @@ from .views import DietPlanViewSet
 
 from django.urls import path
 from . import views
+from django.urls import path, include
+from rest_framework.routers import DefaultRouter
+from .views import DietPlanViewSet
+
+router = DefaultRouter()
+router.register(r'dietplans', DietPlanViewSet, basename='dietplan')
 
 urlpatterns = [
-    path('', views.SSMember),
-    path('<int:pk>/', views.DietPlanViewSet),
+    path('api/', include(router.urls)),
+]
+
+
+from django.urls import path
+from .views import Tweet_list, Tweet_create, tweet_edit, tweet_delete
+
+urlpatterns += [
+    path('dietplans/', Tweet_list, name='Tweet_list'),
+    path('dietplans/create/', Tweet_create, name='Tweet_create'),
+    path('dietplans/<int:tweet_id>/edit/', tweet_edit, name='tweet_edit'),
+    path('dietplans/<int:tweet_id>/delete/', tweet_delete, name='tweet_delete'),
 ]

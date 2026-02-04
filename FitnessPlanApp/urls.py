@@ -28,10 +28,17 @@ urlpatterns = [
     path('', include(router.urls)),
 ]
 
-from django.urls import path
-from . import views
+# from django.urls import path
+# from . import views
 
-urlpatterns = [
-    path('', views.IMember),
-    path('<int:pk>/', views.FitnessPlanViewSet),
-]
+# urlpatterns = [
+#     path('', views.IMember),
+#     path('<int:pk>/', views.FitnessPlanViewSet),
+# ]
+
+# router = DefaultRouter()
+# router.register(r'fitnessplans', FitnessPlanViewSet, basename='fitnessplan')
+
+# urlpatterns = [
+#     path('api/', include(router.urls)),
+# ]

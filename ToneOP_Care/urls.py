@@ -24,6 +24,7 @@ urlpatterns = [
     path('dietplans/', include('DietPlanApp.urls')),
     path('fitnessplans/', include('FitnessPlanApp.urls')),
     path('trackers/', include('UserTracker.urls')),
+
 ]
 
 # from django.contrib import admin
@@ -46,15 +47,4 @@ urlpatterns = [
 #     path('admin/', admin.site.urls),
 #     path('api/', include(router.urls)),
 #     path('dashboard/', include('dashboard.urls')),
-# ]
-
-# from django.contrib import admin
-# from django.urls import path, include
-
-# urlpatterns = [
-#     path('admin/', admin.site.urls),
-
-#     # Only Coach and Tracker apps exposed at project level
-#     path('coaches/', include('CoachApp.urls')),
-#     path('trackers/', include('TrackerApp.urls')),
 # ]

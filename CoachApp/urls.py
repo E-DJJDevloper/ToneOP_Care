@@ -9,17 +9,13 @@ from django.urls import path, include
 #     path('', include(router.urls)),
 # ]
 
-from django.urls import path
-from . import views
-
-urlpatterns = [
-    path('', views.CoachPlanViewSet),
-    path('', views.IsMember),
-]
-
+from django.urls import path, include
 from rest_framework.routers import DefaultRouter
 from .views import CoachPlanViewSet
 
 router = DefaultRouter()
-router.register(r'coaches', CoachPlanViewSet)
-urlpatterns = router.urls
+router.register(r'coaches', CoachPlanViewSet, basename='coach')
+
+urlpatterns = [
+    path('', include(router.urls)),
+]

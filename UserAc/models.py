@@ -6,15 +6,15 @@ from django.db import models
 from django.contrib.auth.models import AbstractUser,AbstractBaseUser, PermissionsMixin, BaseUserManager
 from django.utils import timezone
 
-class CustomUser(AbstractUser):
-    ROLE_CHOICES = (
-        ('guest', 'Guest'),
-        ('admin', 'Admin'),
-    )
-    role = models.CharField(max_length=20, choices=ROLE_CHOICES, default='guest')
-    email = models.EmailField(unique=True)
-    USERNAME_FIELD = 'email'
-    REQUIRED_FIELDS = ['username']
+# class CustomUser(AbstractUser):
+#     ROLE_CHOICES = (
+#         ('guest', 'Guest'),
+#         ('admin', 'Admin'),
+#     )
+#     role = models.CharField(max_length=20, choices=ROLE_CHOICES, default='guest')
+#     email = models.EmailField(unique=True)
+#     USERNAME_FIELD = 'email'
+#     REQUIRED_FIELDS = ['username']
 
 
 class UserManager(BaseUserManager):
